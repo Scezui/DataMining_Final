@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/css.css')}}">
+    <script src="{{ url_for('static', filename='js/js.js')}}"></script>
+</head>
+
+<body style="margin: 0; padding: 0; ">
+
+    <div class="content-wrapper">
+        <div class="content-wrapper-header">
+            <div class="content-wrapper-context">
+                <h3 class="img-content">
+                    <img src="https://orangedatamining.com/widget-icons/Model-Linear%20Regression.png"> Linear Regression </h3>
+                <div class=" content-text ">inear regression is a modeling technique used to predict a continuous outcome by fitting a linear equation to the input data. It is a fundamental and widely-used algorithm for tasks such as regression analysis and forecasting.</div>
+            </div>
+        </div>
+        <div class="content-section ">
+            <div class="content-section-title ">Visualization</div>
+            <div class="apps-card ">
+                <div class="app-card">
+                    <form method="post" action="{{ url_for('predict') }}" onsubmit="return validateForm()">
+                        <div class="form-container">
+                            <div class="form-group">
+                                <label for="exampleInputPassword1" class="glass-label">Job Position:</label><br>
+                                <select class="form-select glass-select" aria-label=".form-select-sm example" name="comp_select">
+                            <option selected>Select Position</option>
+                            <option value="1">Junior</option>
+                            <option value="2">Senior</option>
+                            <option value="3">Project Manager</option>
+                            <option value="4">CTO</option>
+                          </select><br><br>
+                                <label for="experience" class="glass-label">Experience:</label><br>
+                                <input type="number" id="experience" class="form-control glass-input" name="experience" placeholder="Experience" required="required"><br><br>
+                            </div>
+                        </div>
+                        <button type="submit" class="glass-button">Predict</button>
+                    </form>
+                </div>
+
+                <div class="app-card ">
+                    <br><span>Predictions:</span><br>
+                    <ul>
+                        <li>{{ position_level }}</li>
+                        <li>{{ experience }}</li>
+                        <li>
+                            <span style="color: green; font-weight: bold;">{{ prediction_text }}</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <br><br><br><br><br>
+    </div>
+
+</body>
+
+</html>

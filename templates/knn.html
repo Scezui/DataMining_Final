@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/css.css')}}">
+    <script src="{{ url_for('static', filename='js/js.js')}}"></script>
+</head>
+
+<body style="margin: 0; padding: 0;">
+    <div class="content-wrapper">
+        <div class="content-wrapper-header">
+            <div class="content-wrapper-context">
+                <h3 class="img-content">
+                    <img src="https://orangedatamining.com/widget-icons/Model-kNN.png"> K-Nearest Neighbour </h3>
+                <div class=" content-text ">K-nearest neighbors (KNN) is a machine learning algorithm that classifies or predicts the value of a data point based on its proximity to the nearest neighbors in the training dataset.</div>
+            </div>
+        </div>
+        <div class="content-section ">
+            <div class="content-section-title ">Visualization</div>
+            <div class="apps-card ">
+                <div class="app-card ">
+                    <form method="POST" action="{{ url_for('predictknn') }}" onsubmit="return validateForm()">
+                        <label for="experience">Experience:</label><br>
+                        <input type="number" class="form-control glass-input" id="experience" name="experience" placeholder="Experience" required><br><br>
+                        
+                        <label for="salary">Salary:</label><br>
+                        <input type="number" class="form-control glass-input" id="salary" name="salary" placeholder="Salary" required><br><br>
+                        
+                        <button type="submit" class="glass-button">Classify</button><br>
+                    </form>
+                    
+                </div>
+                <div class="app-card ">
+                    <br><span>Predictions:</span><br>
+                    <ul>
+                        <li>{{ salary }}</li>
+                        <li>{{ experience }}</li>
+                        <li>
+                            <span style="color: green; font-weight: bold;">{{ prediction_text }}</span>
+                        </li>
+                    </ul>
+
+
+                </div>
+            </div>
+        </div>
+        <br><br><br><br><br>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/css.css')}}">
+    <script src="{{ url_for('static', filename='js/js.js')}}"></script>
+</head>
+
+<body style="margin: 0; padding: 0;">
+    <div class="content-wrapper">
+        <div class="content-wrapper-header">
+            <div class="content-wrapper-context">
+                <h3 class="img-content">
+                    <img src="https://orangedatamining.com/widget-icons/Model-Naive%20Bayes.png"> Naive Bayes</h3>
+                <div class=" content-text ">Naive Bayes is a probabilistic algorithm used for classification tasks, assuming independence between features, and calculating the probability of a class label given the input features.</div>
+            </div>
+        </div>
+        <div class="content-section ">
+            <div class="content-section-title ">Visualization</div>
+            <div class="apps-card ">
+                <div class="app-card ">
+                    <form action="{{ url_for('predictnaive') }}" method="POST" onsubmit="return validateForm()">
+                        <label for="experience">Experience:</label><br>
+                        <input type="number" id="experience" class="form-control glass-input" name="experience" placeholder="Experience" required><br><br>
+                    
+                        <label for="salary">Salary:</label><br>
+                        <input type="number" id="salary" class="form-control glass-input" name="salary" placeholder="Salary" required><br><br>
+                    
+                        <button class="glass-button" type="submit">Classify</button>
+                    </form>
+                    
+
+                </div>
+
+                <div class="app-card ">
+                    <span>Predictions:</span><br>
+                    <ul>
+                        <li style="font-size: 10px;">Salary: {{ salary }}</li>
+                        <li style="font-size: 10px;">Experience: {{ experience }}</li>
+                    </ul>
+                    <br>
+                    <table>
+                        <tr>
+                            <th>Naive Bayes Type</th>
+                            <th>Prediction</th>
+                        </tr>
+                        <tr>
+                            <td>Multinomial Naive Bayes</td>
+                            <td style="color: green; font-weight: bold;">{{ multinomial_prediction }}</td>
+                        </tr>
+                        <tr>
+                            <td>Gaussian Naive Bayes</td>
+                            <td style="color: green; font-weight: bold;">{{ gaussian_prediction }}</td>
+                        </tr>
+                        <tr>
+                            <td>Bernoulli Naive Bayes</td>
+                            <td style="color: green; font-weight: bold;">{{ bernoulli_prediction }}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <br><br><br><br><br>
+    </div>
+</body>
+
+</html>

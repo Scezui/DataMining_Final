@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/css.css')}}">
+    <script src="{{ url_for('static', filename='js/js.js')}}"></script>
+
+</head>
+
+<body style="margin: 0; padding: 0;">
+    <div class="content-wrapper">
+        <div class="content-wrapper-header">
+            <div class="content-wrapper-context">
+                <h3 class="img-content">
+                    <img src="https://orangedatamining.com/widget-icons/Unsupervised-k-Means.png"> K-Means </h3>
+                <div class=" content-text ">K-means is a popular clustering algorithm that aims to minimize the within-cluster variance by iteratively assigning data points to centroids and updating their positions.</div>
+            </div>
+        </div>
+        <div class="content-section ">
+            <div class="content-section-title ">Visualization</div>
+            <div class="apps-card ">
+                <div class="app-card ">
+                    <div class="legend-title">Color Legend:</div>
+                    <br><br>
+                    <div class="legend">
+                        <div class="legend-item">
+                            <div class="legend-color" style="background-color: #ff0000;"></div>
+                            Red
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color" style="background-color: #00ff00;"></div>
+                            Green
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color" style="background-color: #0000ff;"></div>
+                            Blue
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color" style="background-color: #bfbf00;"></div>
+                            Violet
+                        </div>
+                    </div>
+                    <br><br>
+                </div>
+                <div class="app-card ">
+                    <span>Clusters:</span><br>
+                    <img src="{{ url_for('static', filename='images/cluster.png') }}" alt="Image" style="max-width: 100%; height: auto;">
+                </div>
+            </div>
+        </div>
+        <br><br><br><br><br>
+    </div>
+</body>
+
+</html>
