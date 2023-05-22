@@ -4,6 +4,7 @@
 <head>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/css.css')}}">
     <script src="{{ url_for('static', filename='js/js.js')}}"></script>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/logo.svg')}}">
 </head>
 
 <body style="margin: 0; padding: 0;">
@@ -36,7 +37,7 @@
                         <li>{{ salary }}</li>
                         <li>{{ experience }}</li>
                         <li>
-                            <span style="color: green; font-weight: bold;">{{ prediction_text }}</span>
+                            <span style="color: #98EECC; font-weight: bold;">{{ prediction_text }}</span>
                         </li>
                     </ul>
 

@@ -72,9 +72,10 @@ def predict():
         
         int_position_level = job_map.get(int(position_level))
         predicted_salary_f = round(float(prediction.item()), 3)
-        predicted_salary = "{:,.3f}".format(predicted_salary_f)
+        predicted_salary = "{:,.3f}".format(predicted_salary_f).replace(",", ", ")
 
-        return render_template('linear.html', position_level=f'Position: {int_position_level}',experience=f'Experience: {experience}', prediction_text=f'Predicted Salary Rate: ₱{predicted_salary}')
+
+        return render_template('linear.html', position_level=f'Position: {int_position_level}',experience=f'Experience: {experience}', prediction_text=f'Predicted Salary Rate: Php {predicted_salary}')
 
     else:
         return render_template('linear.html', prediction_text='Error: Invalid input values. Please select a valid position level and enter a numerical value for experience.')
@@ -85,7 +86,7 @@ def predictknn():
     experience_str = request.form.get('experience')
     salary_str = request.form.get('salary')
     try:
-        experience = float(experience_str)
+        experience = int(experience_str)
         salary = float(salary_str)
     except ValueError:
         return render_template('knn.html', prediction_text=f"Error: Invalid input value. Please enter a valid numerical value for both experience and salary.")
@@ -94,6 +95,12 @@ def predictknn():
     prediction = knn_model.predict(features)
     predicted_job_num = int(prediction[0])
     predicted_job = job_map[predicted_job_num]
+
+    # Display properly
+    salary = "Php {:,.3f}".format(salary).replace(",", ", ")
+    experience = "{} year(s)".format(int(experience))
+
+
 
     return render_template('knn.html', prediction_text=f'Predicted job: {predicted_job}', experience=f'Experience: {experience}', salary=f'Salary: {salary}')
 
@@ -117,6 +124,10 @@ def predictnaive():
         gaussian_prediction = job_map.get(int(gaussian_prediction))
         multinomial_prediction = job_map.get(int(multinomial_prediction))
         bernoulli_prediction = job_map.get(int(bernoulli_prediction))
+
+        # Display properly
+        salary = "Php {:,.3f}".format(salary).replace(",", ", ")
+        experience = "{} year(s)".format(int(experience))
 
 
           # Render the results template with the predicted job classification and accuracy scores

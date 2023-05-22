@@ -1,9 +1,10 @@
-{% extends 'base.html' %} {% block content %}
+
 <!DOCTYPE html>
 <html>
 
 <head>
     <script src="{{ url_for('static', filename='js/js.js')}}"></script>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/logo.svg')}}">
     <meta charset="utf-8 " />
     <title>Classifiers</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/css.css')}}">
@@ -96,4 +97,4 @@
     </div>
 </body>
 
-</html>{% endblock %}
+</html>

@@ -162,6 +162,8 @@ img {
     height: 58px;
     flex-shrink: 0;
     z-index: 1;
+    
+    
 }
 
 .main-header .header-menu {
@@ -219,6 +221,8 @@ img {
     width: 100%;
     overflow: auto;
     background-color: var(--theme-bg-color);
+    backdrop-filter: blur(10px); /* Adjust the blur amount as desired */
+
 }
 
 @media screen and (max-width: 510px) {
@@ -632,7 +636,13 @@ td {
     backdrop-filter: blur(10px);
     color: white;
     border: none;
+    z-index: -1;
 }
+
+.glass-input::placeholder {
+    color: white;
+    opacity: 0.7;
+  }
 
 .glass-button {
     background: linear-gradient(135deg, #6C63FF, #FF6CB9);

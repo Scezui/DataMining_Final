@@ -4,6 +4,7 @@
 <head>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/css.css')}}">
     <script src="{{ url_for('static', filename='js/js.js')}}"></script>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/logo.svg')}}">
 </head>
 
 <body style="margin: 0; padding: 0;">
@@ -46,15 +47,15 @@
                         </tr>
                         <tr>
                             <td>Multinomial Naive Bayes</td>
-                            <td style="color: green; font-weight: bold;">{{ multinomial_prediction }}</td>
+                            <td style="color: #98EECC; font-weight: bold;">{{ multinomial_prediction }}</td>
                         </tr>
                         <tr>
                             <td>Gaussian Naive Bayes</td>
-                            <td style="color: green; font-weight: bold;">{{ gaussian_prediction }}</td>
+                            <td style="color: #98EECC; font-weight: bold;">{{ gaussian_prediction }}</td>
                         </tr>
                         <tr>
                             <td>Bernoulli Naive Bayes</td>
-                            <td style="color: green; font-weight: bold;">{{ bernoulli_prediction }}</td>
+                            <td style="color: #98EECC; font-weight: bold;">{{ bernoulli_prediction }}</td>
                         </tr>
                     </table>
                 </div>
